@@ -24,7 +24,7 @@ export class ServersServise {
   getServer(id: number) {
     const server = this.servers.find(
       (s) => {
-        return s.id;
+        return s.id === id;
       }
     );
     return server;
@@ -33,7 +33,7 @@ export class ServersServise {
   updateServer(id: number, serverInfo: {name: string, status: string}) {
     const server = this.servers.find(
       (s) => {
-        return s.id;
+        return s.id === id;
       }
     );
     if (server) {
