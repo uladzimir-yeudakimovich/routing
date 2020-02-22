@@ -1,5 +1,44 @@
 export class ServersServise {
+  private servers = [
+    {
+      id: 1,
+      name: 'Productionserver',
+      status: 'online'
+    },
+    {
+      id: 2,
+      name: 'Testserver',
+      status: 'offline'
+    },
+    {
+      id: 3,
+      name: 'Devserver',
+      status: 'offline'
+    }
+  ];
+
   getServers() {
-    return [{id: 10, name: 'test', status: 'active'}];
+    return this.servers;
+  }
+
+  getServer(id: number) {
+    const server = this.servers.find(
+      (s) => {
+        return s.id;
+      }
+    );
+    return server;
+  }
+
+  updateServer(id: number, serverInfo: {name: string, status: string}) {
+    const server = this.servers.find(
+      (s) => {
+        return s.id;
+      }
+    );
+    if (server) {
+      server.name = serverInfo.name;
+      server.status = serverInfo.status;
+    }
   }
 }
