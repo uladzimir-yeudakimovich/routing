@@ -13,6 +13,8 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { ServersServise } from './servers/servers.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthService } from './auth.service';
+import { AuthGuadg } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule,
     HttpModule
   ],
-  providers: [ServersServise],
+  providers: [ServersServise, AuthService, AuthGuadg],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
